@@ -1,0 +1,86 @@
+WeekEND v. 1.1
+==============
+2011-11-15
+
+Purpose
+=======
+Provide the weekday as an exit code to batch programmes in DOS compatible
+environments.
+
+License
+=======
+WeekEND v. 1.1
+Copyright (C) 2011  Jon Wickmann
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Introduction
+============
+WeekEND v 0.01 was released in November 1996 to solve a practical problem
+I encountered in batch programming: telling the weekday (as an exit code).
+
+Now 15 years later, apparently there are still a few users of WeekEND.
+Unfortunately they have encountered a problem in the original version. Sundays
+are misrepresented as the 25th week day :-)
+
+I do not think that there is anything wrong in the original version and that
+it will still run fine under the operative systems of the day. However I do
+suspect that newer versions of Windows does not honour or emulate the MS-DOS
+6.0 API (application programming interface) perfectly.
+
+Rewrite
+=======
+The old WeekEND was written for DOS, in assembly language, accessing the API
+through interrupts.
+
+Today I do not have access to a DOS computer, the source code is 1407kms
+away, and I only use assembly language to optimise numerical code.
+
+- This necessitates a rewrite.
+
+For UNIX, POSIX.2-1992 specifies necessary functions to retrieve the weekday.
+The C99 standardised version of the C programming language incorporates
+POSIX.2-1992 and should be ideal for implementing a stable version of WeekEND
+on all platforms.
+
+Usage
+=====
+weekend cmd
+
+Where cmd:
+	-h gives help
+	-l shows the license
+	-d return (as exit code) the week day as 1=Monday, ..., 7=Sunday
+	-p return POSIX week day (as exit code), i.e. 0=Sunday, 1=Monday, ...
+
+For silent operation use -sd or -sp
+
+The - prefix can be replaced by /
+
+Time in the current locale is used
+
+History
+=======
+WeekEND v. 0.01 1996-11-08
+WeekEND v. 0.02 1997-03-14
+WeekEND v. 1.1  2011-11-15
+
+Contact information
+===================
+Jon Wickmann
+git AT jmwickma DOT fastmail DOT fm
+http://jmwickma.fastmail.fm/weekend.html
+
+
+
